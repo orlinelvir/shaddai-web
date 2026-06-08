@@ -46,14 +46,30 @@
         cursor: not-allowed !important;
         pointer-events: none;
       }
-      .checkbox-wrap {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        margin-top: 20px;
-        padding: 15px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 5px;
+      .category-divider {
+        position: relative;
+        text-align: center;
+        margin: 60px 0 40px;
+      }
+      .category-divider::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(197, 160, 89, 0.2);
+        z-index: 1;
+      }
+      .category-divider span {
+        position: relative;
+        z-index: 2;
+        background: var(--navy-dark);
+        padding: 0 30px;
+        color: var(--gold-primary);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-style: italic;
       }
     </style>
   </head>
@@ -98,7 +114,16 @@
               <ul class="navbar-nav ml-auto align-items-lg-center">
                 <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">NOSOTROS</a></li>
-                <li class="nav-item active"><a class="nav-link" href="services.html">SERVICIOS</a></li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      SERVICIOS
+                    </a>
+                    <div class="dropdown-menu bg-navy-dark border-gold" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item text-white" href="services.html">TODOS LOS SERVICIOS</a>
+                      <a class="dropdown-item text-gold font-weight-bold" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
+                      <a class="dropdown-item text-white" href="lending.html">LENDING INMOBILIARIO</a>
+                    </div>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTO</a></li>
                 <li class="nav-item ml-lg-4 mt-3 mt-lg-0">
                   <a href="#appointment" class="btn btn-vip">CITA VIP</a>
@@ -113,194 +138,208 @@
     <section class="breadcrumb-main">
       <div class="container">
         <div class="breadcrumb-inner">
-          <h2>Nuestros Servicios</h2>
-          <p class="cl-white mt-3">Soluciones integrales de Seguros, Taxes, Crédito e Inmigración.</p>
+          <h2>Portafolio de Soluciones</h2>
+          <p class="cl-white mt-3">Excelencia en servicios financieros y protección patrimonial.</p>
         </div>
       </div>
     </section>
 
-    <!-- Services start -->
-    <section class="courses py-5" style="background-color: var(--navy-dark);">
+    <!-- Detailed Services Section -->
+    <section class="services-main py-5" style="background-color: var(--navy-dark);">
       <div class="container">
-        <div class="section-title sc-center justify-content-center text-center pb-5 mt-5">
-          <div class="title-top">
-            <h4 class="text-gold" style="letter-spacing: 2px;">SOLUCIONES PATRIMONIALES</h4>
-            <h3 class="font-weight-bold text-white">PROTEGEMOS LO QUE MÁS <span style="color: var(--gold-primary);">VALORAS</span></h3>
-          </div>
+        
+        <!-- Categoría 1: Financiamiento y Crédito -->
+        <div class="category-divider">
+          <span>Financiamiento y Crédito Estratégico</span>
         </div>
         
         <div class="row">
-          <!-- Taxes -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 wow fadeInUp">
+          <!-- Reparación de Crédito -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp">
             <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
-              <i class="fas fa-calculator fa-3x mb-4" style="color: var(--gold-primary);"></i>
-              <h4 class="text-white">Taxes</h4>
-              <p class="m-0 text-white op-7">Preparación experta de impuestos personales y corporativos maximizando tus beneficios con total legalidad.</p>
-              <button class="btn btn-gold mt-4 w-100" data-toggle="modal" data-target="#taxesModal">VER REQUISITOS</button>
+              <i class="fas fa-history fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Reparación de Crédito</h4>
+              <p class="m-0 text-white op-7">Recupere su salud financiera. Analizamos y disputamos errores para elevar su puntaje crediticio de forma efectiva.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="credit_repair">INICIAR ONBOARDING</button>
             </div>
           </div>
 
-          <!-- Crédito -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+          <!-- Business Funding -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
-              <i class="fas fa-chart-line fa-3x mb-4" style="color: var(--gold-primary);"></i>
-              <h4 class="text-white">Crédito</h4>
-              <p class="m-0 text-white op-7">Asesoría estratégica para la restauración y gestión de crédito, ayudándote a alcanzar tus metas financieras.</p>
-              <a href="#appointment" class="btn btn-gold mt-4 w-100">AGENDAR AHORA</a>
+              <i class="fas fa-briefcase fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Financiamiento de Negocios</h4>
+              <p class="m-0 text-white op-7">Capital para crecimiento. Acceda a programas de financiamiento diseñados para escalar su empresa rápidamente.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="business_funding">APLICAR AHORA</button>
+            </div>
+          </div>
+
+          <!-- Business Credit Cards -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
+              <i class="fas fa-credit-card fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Tarjetas Corporativas</h4>
+              <p class="m-0 text-white op-7">Líneas de crédito empresarial sin afectar su crédito personal. La herramienta clave para su flujo de caja.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="business_cards">SOLICITAR TARJETAS</button>
+            </div>
+          </div>
+
+          <!-- Personal Loans -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp">
+            <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
+              <i class="fas fa-hand-holding-usd fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Préstamos Personales</h4>
+              <p class="m-0 text-white op-7">Soluciones de liquidez inmediata para sus proyectos personales con las mejores tasas del mercado.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="personal_loans">VER DISPONIBILIDAD</button>
+            </div>
+          </div>
+
+          <!-- Residential & Commercial Lending -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
+              <i class="fas fa-city fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Lending Residencial & Comercial</h4>
+              <p class="m-0 text-white op-7">Programas hipotecarios y de inversión inmobiliaria. Financiamos su próxima propiedad con expertos.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="real_estate_lending">PROGRAMAS DE LENDING</button>
+            </div>
+          </div>
+
+          <!-- LLC Onboarding -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
+              <i class="fas fa-landmark fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Registro de LLC & Negocios</h4>
+              <p class="m-0 text-white op-7">Formalice su empresa. Gestión completa de registro de LLC, EIN y estructura legal corporativa.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="llc_registration">REGISTRAR NEGOCIO</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categoría 2: Protección y Fiscalidad -->
+        <div class="category-divider">
+          <span>Protección Patrimonial y Fiscal</span>
+        </div>
+
+        <div class="row">
+          <!-- Taxes -->
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp">
+            <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
+              <i class="fas fa-calculator fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <h4 class="text-white">Preparación de Taxes</h4>
+              <p class="m-0 text-white op-7">Declaraciones de impuestos precisas para individuos y empresas. Máximo reembolso garantizado.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="taxes_prep">REQUISITOS OFICIALES</button>
             </div>
           </div>
 
           <!-- Seguros de Salud -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
-              <i class="fas fa-user-md fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <i class="fas fa-user-shield fa-3x mb-4" style="color: var(--gold-primary);"></i>
               <h4 class="text-white">Seguros de Salud</h4>
-              <p class="m-0 text-white op-7">Protección integral de salud con planes Obama Care y seguros privados adaptados a tu familia.</p>
-              <a href="https://wa.me/17709129475" class="btn btn-gold mt-4 w-100">SOLICITAR COTIZACIÓN</a>
+              <p class="m-0 text-white op-7">Planes Obama Care y seguros privados. Asegure el bienestar médico de toda su familia.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="health_insurance">COTIZAR PLAN</button>
             </div>
           </div>
 
           <!-- Gastos Finales -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.2s">
             <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
               <i class="fas fa-dove fa-3x mb-4" style="color: var(--gold-primary);"></i>
               <h4 class="text-white">Gastos Finales</h4>
-              <p class="m-0 text-white op-7">Asegura la tranquilidad de tus seres queridos cubriendo gastos funerarios y deudas finales sin preocupaciones.</p>
-              <a href="https://wa.me/17709129475" class="btn btn-gold mt-4 w-100">MÁS INFORMACIÓN</a>
+              <p class="m-0 text-white op-7">Protección de por vida para cubrir gastos funerarios y eliminar cargas financieras para sus herederos.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="final_expenses">SOLICITAR INFO</button>
             </div>
           </div>
 
           <!-- Pólizas de Ahorro -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp">
             <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
               <i class="fas fa-piggy-bank fa-3x mb-4" style="color: var(--gold-primary);"></i>
-              <h4 class="text-white">Pólizas de Ahorro</h4>
-              <p class="m-0 text-white op-7">Planes de ahorro con protección de vida, diseñados para construir un fondo sólido para el futuro de tus hijos.</p>
-              <a href="https://wa.me/17709129475" class="btn btn-gold mt-4 w-100">VER PLANES</a>
+              <h4 class="text-white">Pólizas de Ahorro (Vida)</h4>
+              <p class="m-0 text-white op-7">Planes con acumulación de efectivo. Proteja su vida mientras construye un capital para el retiro o educación.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="life_savings">VER PROGRAMAS</button>
             </div>
           </div>
 
           <!-- Seguros Generales -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-ct-list shadow-lg h-100 p-4 border-0 rounded" style="background-color: var(--navy-light); border-radius: 15px !important; text-align: center;">
-              <i class="fas fa-shield-alt fa-3x mb-4" style="color: var(--gold-primary);"></i>
+              <i class="fas fa-car-side fa-3x mb-4" style="color: var(--gold-primary);"></i>
               <h4 class="text-white">Seguros Generales</h4>
-              <p class="m-0 text-white op-7">Cobertura para tu Auto, Hogar y Negocio con el respaldo de las mejores aseguradoras de Georgia.</p>
-              <a href="https://wa.me/17709129475" class="btn btn-gold mt-4 w-100">COTIZAR AHORA</a>
+              <p class="m-0 text-white op-7">Auto, Home, General Liability y Comercial. La mejor cobertura al precio más competitivo de Georgia.</p>
+              <button class="btn btn-gold mt-4 w-100 open-service-modal" data-service="general_insurance">COTIZAR AHORA</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Appointment Section -->
+    <!-- Appointment Section (Go High Level) -->
     <section class="ghl-appointment py-5" id="appointment" style="background-color: #fcfcfc;">
+      <div class="container text-center mb-5">
+        <h4 class="text-gold small letter-spacing-2">CONSULTA ESTRATÉGICA</h4>
+        <h2 class="text-navy font-weight-bold">RESERVE SU CITA VIP</h2>
+        <p class="text-muted">Elija el horario que prefiera para una asesoría personalizada con nuestros expertos.</p>
+      </div>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="booking-calendar shadow-lg p-2 rounded bg-white" style="border: 2px solid var(--gold-primary);">
               <iframe src="https://api.leadconnectorhq.com/widget/booking/dvGMPsxrNuO59YeCAKAm" style="width: 100%; border:none; overflow: hidden; min-height: 700px;" scrolling="no"></iframe>
-              <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Modal Taxes -->
-    <div class="modal fade" id="taxesModal" tabindex="-1" role="dialog">
+    <!-- Reusable Service Modal -->
+    <div class="modal fade" id="serviceRequirementsModal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content border-0">
           <div class="modal-header bg-dark-corporate text-white">
-            <h5 class="modal-title font-weight-bold">REQUISITOS PARA PREPARACIÓN DE IMPUESTOS</h5>
+            <h5 class="modal-title font-weight-bold" id="modalTitle">REQUISITOS DEL SERVICIO</h5>
             <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body p-0">
-            <div class="modal-requirements">
-              <h6>DOCUMENTOS DE IDENTIDAD</h6>
-              <ul>
-                <li>Identificación oficial (ID de Georgia, Licencia de Conducir o Pasaporte).</li>
-                <li>Tarjeta de Seguro Social o número de ITIN original.</li>
-                <li>Fecha de nacimiento de todas las personas en la declaración.</li>
-              </ul>
-              <h6>COMPROBANTES DE INGRESOS</h6>
-              <ul>
-                <li>Formularios W-2 de todos los empleos.</li>
-                <li>Formularios 1099 (NEC, MISC, INT, DIV, G, K, R, S) si aplica.</li>
-                <li>Ingresos por desempleo o Seguro Social.</li>
-              </ul>
-              <h6>GASTOS Y DEDUCCIONES</h6>
-              <ul>
-                <li>Gastos médicos, dentales y de visión.</li>
-                <li>Impuestos sobre la propiedad y donaciones.</li>
-                <li>Intereses hipotecarios (Formulario 1098).</li>
-                <li>Gastos de educación (Formulario 1098-T).</li>
-              </ul>
-              <h6>OTROS</h6>
-              <ul>
-                <li>Formulario 1095-A (Obama Care).</li>
-                <li>Información de cuenta bancaria para depósito directo.</li>
-              </ul>
-              <div class="checkbox-wrap">
-                <input type="checkbox" id="confirmCheck">
-                <span class="small">Confirmo que he leído los requisitos y cuento con la documentación necesaria.</span>
-              </div>
+            <div class="modal-requirements" id="modalContent">
+              <!-- Content loaded dynamically -->
             </div>
-            <div class="text-center p-4 bg-light border-top">
-              <a href="https://wa.me/17709129475" id="proceedBtn" class="btn btn-gold px-5 py-3 apply-btn-disabled">CONTINUAR A LA APLICACIÓN</a>
+            <div class="p-4 bg-light border-top">
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="termsCheck">
+                <label class="custom-control-label small" for="termsCheck">Confirmo que he leído los requisitos y acepto los términos y condiciones de Shaddai Financial Group para proceder con esta aplicación.</label>
+              </div>
+              <div class="text-center">
+                <a href="#" id="modalProceedBtn" class="btn btn-gold px-5 py-3 apply-btn-disabled">CONTINUAR A LA APLICACIÓN</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer starts -->
     <footer class="wow fadeInUp corporate-border-top" id="footer">
       <div class="footer-upper pt-5 pb-4 bg-dark-corporate text-white">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="f-maincontent">
-                <img src="images/shaddai-logo.png" alt="Shaddai" class="mb-4" style="max-width: 220px; filter: brightness(0) invert(1);"/>
-                <p class="text-light pr-lg-5">Tu socio estratégico en soluciones financieras. Protegemos tu presente y planificamos tu futuro.</p>
-                <ul class="d-flex social-gold mt-4 p-0" style="list-style:none;">
-                  <li class="pr-3"><a href="#" class="bg-gold-soft"><i class="fab fa-facebook-f"></i></a></li>
-                  <li class="pr-3"><a href="#" class="bg-gold-soft"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="#" class="bg-gold-soft"><i class="fab fa-linkedin-in"></i></a></li>
-                </ul>
-              </div>
+          <div class="row text-center text-md-left">
+            <div class="col-lg-6 mb-4">
+              <img src="images/shaddai-logo.png" alt="Shaddai" class="mb-4" style="max-width: 200px; filter: brightness(0) invert(1);"/>
+              <p class="text-light pr-lg-5">Socio estratégico en soluciones financieras y protección patrimonial en Georgia.</p>
             </div>
-            <div class="col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
-              <div class="ft-lists">
-                <h4 class="text-gold small font-weight-bold letter-spacing-1">EMPRESA</h4>
-                <ul class="text-light mt-3 p-0" style="list-style:none;">
-                  <li><a href="index.html" class="text-light op-7">Inicio</a></li>
-                  <li><a href="about.html" class="text-light op-7">Nosotros</a></li>
-                  <li><a href="services.html" class="text-light op-7">Servicios</a></li>
-                  <li><a href="contact.html" class="text-light op-7">Contacto</a></li>
-                </ul>
-              </div>
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+              <h4 class="text-gold small font-weight-bold">EMPRESA</h4>
+              <ul class="list-unstyled mt-3">
+                <li><a href="index.html" class="text-light op-7 small">Inicio</a></li>
+                <li><a href="about.html" class="text-light op-7 small">Nosotros</a></li>
+                <li><a href="services.html" class="text-light op-7 small">Servicios</a></li>
+              </ul>
             </div>
-            <div class="col-lg-2 col-md-4 col-6 mb-4 mb-md-0">
-              <div class="ft-lists">
-                <h4 class="text-gold small font-weight-bold letter-spacing-1">SERVICIOS</h4>
-                <ul class="text-light mt-3 p-0" style="list-style:none;">
-                  <li><a href="#" class="text-light op-7">Seguros</a></li>
-                  <li><a href="#" class="text-light op-7">Impuestos</a></li>
-                  <li><a href="#" class="text-light op-7">Finanzas</a></li>
-                  <li><a href="#" class="text-light op-7">Crédito</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-12">
-              <div class="ft-lists">
-                <h4 class="text-gold small font-weight-bold letter-spacing-1">UBICACIÓN</h4>
-                <ul class="text-light mt-3 p-0" style="list-style:none;">
-                  <li>Gainesville, GA</li>
-                  <li>(770) 912-9475</li>
-                  <li>info@shaddaifinancial.com</li>
-                </ul>
-              </div>
+            <div class="col-lg-4 col-md-8">
+              <h4 class="text-gold small font-weight-bold">CONTACTO DIRECTO</h4>
+              <ul class="list-unstyled mt-3">
+                <li class="text-light op-7 small mb-2"><i class="fas fa-phone-alt mr-2 text-gold"></i> (770) 912-9475</li>
+                <li class="text-light op-7 small"><i class="far fa-envelope mr-2 text-gold"></i> info@shaddaifinancial.com</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -314,12 +353,84 @@
     <script src="js/main.js"></script>
     <script src="js/custom-nav.js"></script>
     <script>
+      const serviceData = {
+        credit_repair: {
+          title: "REQUISITOS - REPARACIÓN DE CRÉDITO",
+          content: `<h6>1. IDENTIFICACIÓN</h6><ul><li>ID oficial vigente o Pasaporte.</li><li>Tarjeta de Seguro Social o número de ITIN.</li><li>Comprobante de domicilio reciente (Luz, Agua o Internet).</li></ul><h6>2. ACCESO A REPORTES</h6><ul><li>Credenciales de acceso a IdentityIQ o SmartCredit (para jalar su reporte de los 3 burós).</li></ul><h6>3. COMPROMISO</h6><ul><li>Disponibilidad para no abrir nuevas líneas de crédito durante el proceso.</li></ul>`,
+          link: "https://api.leadconnectorhq.com/widget/form/SzJq4m3KVcrSIAfLwjU3"
+        },
+        business_funding: {
+          title: "REQUISITOS - FINANCIAMIENTO EMPRESARIAL",
+          content: `<h6>1. ESTRUCTURA LEGAL</h6><ul><li>LLC o Corporación activa.</li><li>EIN registrado y Artículos de Incorporación.</li></ul><h6>2. ESTADOS FINANCIEROS</h6><ul><li>Últimos 3 a 6 estados de cuenta bancarios EMPRESARIALES.</li><li>Mínimo $10,000 en depósitos mensuales promedio.</li></ul><h6>3. CRÉDITO</h6><ul><li>Puntaje personal desde 500 (según el programa).</li></ul>`,
+          link: "https://api.leadconnectorhq.com/widget/form/Q8BlLV00BD7FDr7CiPdY"
+        },
+        business_cards: {
+          title: "REQUISITOS - TARJETAS CORPORATIVAS",
+          content: `<h6>1. PERFIL DEL DUEÑO</h6><ul><li>Crédito personal de 680+ puntos.</li><li>Sin bancarrotas recientes en el reporte.</li></ul><h6>2. DATOS DEL NEGOCIO</h6><ul><li>EIN (Número de Identificación Patronal).</li><li>Dirección comercial física (No PO Box).</li></ul><h6>3. TIEMPO EN EL NEGOCIO</h6><ul><li>Aplica desde el día 0 de registro.</li></ul>`,
+          link: "https://api.leadconnectorhq.com/widget/form/0cUU3uA7pQySupZnRRTU"
+        },
+        personal_loans: {
+          title: "REQUISITOS - PRÉSTAMOS PERSONALES",
+          content: `<h6>1. CRÉDITO Y RESIDENCIA</h6><ul><li>Puntaje FICO de 650 o superior.</li><li>Estatus legal en EE.UU.</li></ul><h6>2. INGRESOS DOCUMENTADOS</h6><ul><li>Últimos 2 talones de pago (Paystubs).</li><li>Declaración de impuestos más reciente (W2 o 1040).</li></ul><h6>3. IDENTIDAD</h6><ul><li>Licencia de conducir vigente.</li></ul>`,
+          link: "https://api.leadconnectorhq.com/widget/form/r6wQyuC2VQnQRAnGvXBC"
+        },
+        real_estate_lending: {
+          title: "REQUISITOS - LENDING INMOBILIARIO",
+          content: `<h6>1. PROGRAMA RESIDENCIAL</h6><ul><li>FHA: 3.5% enganche, 580+ FICO.</li><li>Convencional: 3-20% enganche, 620+ FICO.</li></ul><h6>2. PROGRAMA INVERSIONISTA (DSCR)</h6><ul><li>Sin verificación de ingresos personales.</li><li>Basado en el flujo de renta de la propiedad.</li></ul><h6>3. CIERRE</h6><ul><li>Pruebas de fondos para el Down Payment.</li></ul>`,
+          link: "https://api.leadconnectorhq.com/widget/form/GtPj6jrdQ7gZCmpADuL8"
+        },
+        llc_registration: {
+          title: "REQUISITOS - REGISTRO DE NEGOCIO",
+          content: `<h6>1. INFORMACIÓN BÁSICA</h6><ul><li>Nombre deseado para la empresa (3 opciones).</li><li>Dirección física del negocio.</li><li>Nombre y datos de los socios.</li></ul><h6>2. DOCUMENTACIÓN</h6><ul><li>ID oficial de todos los miembros.</li></ul><h6>3. TRAMITACIÓN</h6><ul><li>Registro estatal, obtención de EIN y Operating Agreement.</li></ul>`,
+          link: "https://api.leadconnectorhq.com/widget/form/9O7TQ5vaJwjLQpmH2XY5"
+        },
+        taxes_prep: {
+          title: "REQUISITOS - TAXES 2026",
+          content: `<h6>1. IDENTIFICACIÓN Y FAMILIA</h6><ul><li>ID oficial y Seguro Social/ITIN original.</li><li>Fechas de nacimiento de dependientes.</li></ul><h6>2. INGRESOS</h6><ul><li>W-2, 1099-NEC o estados de cuenta de negocio.</li></ul><h6>3. SALUD</h6><ul><li>Formulario 1095-A (Seguro Obama Care) - OBLIGATORIO.</li></ul>`,
+          link: "https://wa.me/17709129475"
+        },
+        health_insurance: {
+          title: "REQUISITOS - SEGURO DE SALUD",
+          content: `<h6>1. DATOS DEL HOGAR</h6><ul><li>Código postal de residencia.</li><li>Número de personas en la declaración de impuestos.</li></ul><h6>2. INGRESOS ESTIMADOS</h6><ul><li>Ingreso anual proyectado para 2026.</li></ul><h6>3. ESTATUS</h6><ul><li>Estatus migratorio o prueba de presencia legal.</li></ul>`,
+          link: "https://wa.me/17709129475"
+        },
+        final_expenses: {
+          title: "REQUISITOS - GASTOS FINALES",
+          content: `<h6>1. INFORMACIÓN PERSONAL</h6><ul><li>Edad (hasta los 85 años).</li><li>Historial médico básico.</li></ul><h6>2. BENEFICIARIO</h6><ul><li>Nombre y datos de quien recibirá la protección.</li></ul><h6>3. PAGO</h6><ul><li>Cuenta bancaria para el débito mensual.</li></ul>`,
+          link: "https://wa.me/17709129475"
+        },
+        life_savings: {
+          title: "REQUISITOS - PÓLIZAS DE VIDA/AHORRO",
+          content: `<h6>1. OBJETIVO FINANCIERO</h6><ul><li>Meta de ahorro o monto de protección deseado.</li></ul><h6>2. SALUD</h6><ul><li>Evaluación simple de salud y hábitos (tabaco).</li></ul><h6>3. EDAD</h6><ul><li>Aplica para niños y adultos hasta los 75 años.</li></ul>`,
+          link: "https://wa.me/17709129475"
+        },
+        general_insurance: {
+          title: "REQUISITOS - SEGUROS GENERALES",
+          content: `<h6>1. AUTO / HOME</h6><ul><li>Póliza actual (Declarations Page).</li><li>Número de serie de vehículos o dirección de propiedad.</li></ul><h6>2. COMERCIAL</h6><ul><li>Certificados previos y EIN de la empresa.</li></ul>`,
+          link: "https://wa.me/17709129475"
+        }
+      };
+
       $(document).ready(function() {
-        $('#confirmCheck').change(function() {
+        $('.open-service-modal').click(function() {
+          const serviceKey = $(this).data('service');
+          const data = serviceData[serviceKey];
+          
+          if(data) {
+            $('#modalTitle').text(data.title);
+            $('#modalContent').html(data.content);
+            $('#modalProceedBtn').attr('href', data.link);
+            $('#termsCheck').prop('checked', false);
+            $('#modalProceedBtn').addClass('apply-btn-disabled');
+            $('#serviceRequirementsModal').modal('show');
+          }
+        });
+
+        $('#termsCheck').change(function() {
           if($(this).is(':checked')) {
-            $('#proceedBtn').removeClass('apply-btn-disabled');
+            $('#modalProceedBtn').removeClass('apply-btn-disabled');
           } else {
-            $('#proceedBtn').addClass('apply-btn-disabled');
+            $('#modalProceedBtn').addClass('apply-btn-disabled');
           }
         });
       });
