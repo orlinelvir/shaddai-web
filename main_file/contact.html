@@ -17,6 +17,10 @@
     <link href="css/plugin.css" rel="stylesheet" type="text/css" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <style>
+      body { padding-top: 130px; }
+      @media (max-width: 991px) { body { padding-top: 100px; } }
+    </style>
   </head>
   <body>
     <!-- Preloader -->
@@ -53,7 +57,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
           <div class="container">
             <a class="navbar-brand py-0" href="index.html">
-              <img src="images/shaddai-logo.png" alt="Shaddai Financial Group" style="max-height: 80px; filter: brightness(0) invert(1);" />
+              <img src="images/shaddai-logo-premium.png" alt="Shaddai Financial Group" style="max-height: 80px; " />
             </a>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,15 +69,16 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">NOSOTROS</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      SERVICIOS
-                    </a>
-                    <div class="dropdown-menu bg-navy-dark border-gold" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item text-white" href="services.html">TODOS LOS SERVICIOS</a>
-                      <a class="dropdown-item text-gold font-weight-bold" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
-                      <a class="dropdown-item text-white" href="lending.html">LENDING INMOBILIARIO</a>
-                    </div>
-                    </li>
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SERVICIOS
+                  </a>
+                  <div class="dropdown-menu bg-navy-dark border-gold" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-white" href="services.html">TODOS LOS SERVICIOS</a>
+                    <a class="dropdown-item text-white" href="credit-repair.html">REPARACIÓN DE CRÉDITO</a>
+                    <a class="dropdown-item text-white" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
+                    <a class="dropdown-item text-white" href="lending.html">LENDING INMOBILIARIO</a>
+                  </div>
+                </li>
                     <li class="nav-item active"><a class="nav-link" href="contact.html">CONTACTO</a></li>
                 <li class="nav-item ml-lg-4 mt-3 mt-lg-0">
                   <a href="#contact" class="btn btn-vip">CITA VIP</a>
@@ -136,10 +141,7 @@
           <div class="col-lg-12">
             <div class="section-title text-center mb-5">
               <h4 class="text-gold small letter-spacing-2">AGENDA TU CITA</h4>
-              <h2 class="text-white">RESERVA UNA CONSULTA <span class="text-gold">STRATÉGICA</span></h2>
-            </div>
-            <div class="contact-map mb-5 shadow-lg rounded overflow-hidden border border-gold-soft">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.782803153406!2d-83.8211516!3d34.2505556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5f6755866170d%3A0xe75868e8e63a34a!2s3694%20Abbey%20Way%2C%20Gainesville%2C%20GA%2030507!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <h2 class="text-white">RESERVA UNA CONSULTA <span class="text-gold">ESTRATÉGICA</span></h2>
             </div>
             <div class="booking-calendar shadow-lg p-3 rounded bg-white border border-gold-soft">
               <iframe src="https://api.leadconnectorhq.com/widget/booking/dvGMPsxrNuO59YeCAKAm" style="width: 100%; border:none; overflow: hidden; min-height: 700px;" scrolling="no"></iframe>
@@ -156,7 +158,7 @@
           <div class="row">
             <div class="col-lg-6 mb-4 mb-lg-0">
               <div class="f-maincontent">
-                <img src="images/shaddai-logo.png" alt="Shaddai" class="mb-4" style="max-width: 220px; filter: brightness(0) invert(1);"/>
+                <img src="images/shaddai-logo-premium.png" alt="Shaddai" class="mb-4" style="max-width: 220px; "/>
                 <p class="text-light pr-lg-5">Tu socio estratégico en soluciones financieras. Protegemos tu presente y planificamos tu futuro con integridad, transparencia y un compromiso inquebrantable con tu éxito.</p>
                 <ul class="d-flex social-gold mt-4">
                   <li class="pr-3"><a href="#" class="bg-gold-soft"><i class="fab fa-facebook-f"></i></a></li>
@@ -222,3 +224,5 @@
     <script src="js/custom-nav.js"></script>
   </body>
 </html>
+
+

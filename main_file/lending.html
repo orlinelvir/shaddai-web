@@ -25,11 +25,32 @@
         --premium-navy: #071022;
       }
       
+      body { padding-top: 130px; }
+      @media (max-width: 991px) { body { padding-top: 100px; } }
+
       .text-navy { color: var(--premium-navy) !important; }
       .font-playfair { font-family: 'Playfair Display', serif !important; }
       .font-weight-black { font-weight: 900 !important; }
       .letter-spacing-3 { letter-spacing: 3px; }
       .letter-spacing-2 { letter-spacing: 2px; }
+
+      /* Fix for light backgrounds inheriting global light text */
+      .bg-white, .bg-premium-cream, .bg-light, .loan-portfolio, .roadmap, .loan-card, .step-box {
+        color: var(--premium-navy) !important;
+      }
+      
+      .bg-white p, .bg-premium-cream p, .bg-light p, .loan-portfolio p, .roadmap p, .loan-card p, .step-box p,
+      .bg-white li, .bg-premium-cream li, .bg-light li {
+        color: #4a4a4a !important;
+      }
+
+      .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+      .bg-premium-cream h1, .bg-premium-cream h2, .bg-premium-cream h3, .bg-premium-cream h4, .bg-premium-cream h5, .bg-premium-cream h6,
+      .bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6,
+      .loan-card h1, .loan-card h2, .loan-card h3, .loan-card h4, .loan-card h5, .loan-card h6,
+      .step-box h1, .step-box h2, .step-box h3, .step-box h4, .step-box h5, .step-box h6 {
+        color: var(--premium-navy) !important;
+      }
 
       .loan-card {
         background: #fff;
@@ -131,32 +152,6 @@
       .step-box:hover i {
         transform: scale(1.2);
       }
-
-      /* Fix for light backgrounds inheriting global light text */
-      .bg-white, .loan-portfolio, .roadmap {
-        color: var(--premium-navy) !important;
-      }
-      
-      .bg-white p, .loan-portfolio p, .roadmap p {
-        color: #4a4a4a !important;
-      }
-
-      .text-muted {
-        color: #6c757d !important;
-      }
-
-      /* Navbar Toggler Custom Style */
-      .navbar-toggler {
-        border: none;
-        padding: 10px;
-      }
-      .navbar-toggler:focus {
-        outline: none;
-        box-shadow: none;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(197, 160, 89, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-      }
     </style>
   </head>
   <body>
@@ -183,7 +178,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
           <div class="container">
             <a class="navbar-brand py-0" href="index.html">
-              <img src="images/shaddai-logo.png" alt="Shaddai Financial Group" style="max-height: 80px; filter: brightness(0) invert(1);" />
+              <img src="images/shaddai-logo-premium.png" alt="Shaddai Financial Group" style="max-height: 80px; " />
             </a>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -200,7 +195,8 @@
                     </a>
                     <div class="dropdown-menu bg-navy-dark border-gold" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item text-white" href="services.html">TODOS LOS SERVICIOS</a>
-                      <a class="dropdown-item text-gold font-weight-bold" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
+                      <a class="dropdown-item text-white" href="credit-repair.html">REPARACIÓN DE CRÉDITO</a>
+                      <a class="dropdown-item text-white" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
                       <a class="dropdown-item text-white" href="lending.html">LENDING INMOBILIARIO</a>
                     </div>
                 </li>
@@ -421,7 +417,7 @@
         <div class="container">
           <div class="row text-center text-md-left">
             <div class="col-lg-6 mb-4">
-              <img src="images/shaddai-logo.png" alt="Shaddai" class="mb-4" style="max-width: 200px; filter: brightness(0) invert(1);"/>
+              <img src="images/shaddai-logo-premium.png" alt="Shaddai" class="mb-4" style="max-width: 200px; "/>
               <p class="text-light pr-lg-5">Socio estratégico en soluciones financieras y protección patrimonial en Georgia.</p>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -444,3 +440,5 @@
     <script src="js/custom-nav.js"></script>
   </body>
 </html>
+
+

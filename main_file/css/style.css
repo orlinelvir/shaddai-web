@@ -315,6 +315,53 @@ section {
   color: #232F58;
 }
 
+/* ========================================= */
+/*         Premium Global Helpers         */
+/* ======================================== */
+.bg-navy-dark { background-color: #071022 !important; }
+.border-gold { border: 1px solid #C5A059 !important; }
+
+/* Premium Dropdown Styling */
+.dropdown-menu.bg-navy-dark {
+  padding: 10px 0 !important;
+  margin-top: 15px !important;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4) !important;
+  border-radius: 4px !important;
+  border: 1px solid #C5A059 !important;
+}
+
+.dropdown-menu.bg-navy-dark .dropdown-item {
+  color: #fff !important;
+  padding: 12px 25px !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1px !important;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1) !important;
+  transition: all 0.3s ease !important;
+  background: transparent !important;
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+  text-align: inherit !important;
+  white-space: nowrap !important;
+}
+
+.dropdown-menu.bg-navy-dark .dropdown-item:last-child {
+  border-bottom: none !important;
+}
+
+.dropdown-menu.bg-navy-dark .dropdown-item:hover {
+  background: #C5A059 !important;
+  color: #071022 !important;
+}
+
+.dropdown-menu.bg-navy-dark .dropdown-item.text-gold {
+  color: #C5A059 !important;
+}
+
+.dropdown-menu.bg-navy-dark .dropdown-item.text-gold:hover {
+  color: #071022 !important;
+}
+
 @media (max-width: 991px) {
   .header_menu .navbar.navbar-default .navbar-header {
     text-align: center;
@@ -490,16 +537,7 @@ nav.navbar.navbar-default.navbar-sticky-in .logo-black {
 }
 
 .breadcrumb-main::after {
-  content: "\f0d8";
-  position: absolute;
-  font-family: "FontAwesome";
-  font-size: 4rem;
-  left: 0;
-  right: 0;
-  bottom: -38px;
-  width: 100%;
-  text-align: center;
-  color: #f0fbfc;
+  display: none;
 }
 
 @media (max-width: 991px) {

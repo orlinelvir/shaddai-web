@@ -18,6 +18,9 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <style>
+      body { padding-top: 130px; }
+      @media (max-width: 991px) { body { padding-top: 100px; } }
+
       .modal-requirements {
         background: var(--navy-light);
         color: var(--text-light);
@@ -105,7 +108,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
           <div class="container">
             <a class="navbar-brand py-0" href="index.html">
-              <img src="images/shaddai-logo.png" alt="Shaddai Financial Group" style="max-height: 80px; filter: brightness(0) invert(1);" />
+              <img src="images/shaddai-logo-premium.png" alt="Shaddai Financial Group" style="max-height: 80px; " />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
               <span class="navbar-toggler-icon"></span>
@@ -115,14 +118,15 @@
                 <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">NOSOTROS</a></li>
                 <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      SERVICIOS
-                    </a>
-                    <div class="dropdown-menu bg-navy-dark border-gold" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item text-white" href="services.html">TODOS LOS SERVICIOS</a>
-                      <a class="dropdown-item text-gold font-weight-bold" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
-                      <a class="dropdown-item text-white" href="lending.html">LENDING INMOBILIARIO</a>
-                    </div>
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SERVICIOS
+                  </a>
+                  <div class="dropdown-menu bg-navy-dark border-gold" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-gold font-weight-bold" href="services.html">TODOS LOS SERVICIOS</a>
+                    <a class="dropdown-item text-white" href="credit-repair.html">REPARACIÓN DE CRÉDITO</a>
+                    <a class="dropdown-item text-white" href="business-funding.html">FINANCIAMIENTO EMPRESARIAL</a>
+                    <a class="dropdown-item text-white" href="lending.html">LENDING INMOBILIARIO</a>
+                  </div>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTO</a></li>
                 <li class="nav-item ml-lg-4 mt-3 mt-lg-0">
@@ -323,7 +327,7 @@
         <div class="container">
           <div class="row text-center text-md-left">
             <div class="col-lg-6 mb-4">
-              <img src="images/shaddai-logo.png" alt="Shaddai" class="mb-4" style="max-width: 200px; filter: brightness(0) invert(1);"/>
+              <img src="images/shaddai-logo-premium.png" alt="Shaddai" class="mb-4" style="max-width: 200px; "/>
               <p class="text-light pr-lg-5">Socio estratégico en soluciones financieras y protección patrimonial en Georgia.</p>
             </div>
             <div class="col-lg-2 col-md-4 col-6 mb-4">
@@ -437,3 +441,5 @@
     </script>
   </body>
 </html>
+
+
